@@ -40,13 +40,14 @@ difference(){
         cube([mount_thickness, mount_length, thickness], center=true);
     }
     
-    translate([r_inner + mount_thickness, 0, 0]) dovetail(6+TOL, 3+TOL, 2.5+TOL, thickness+TOL);
+    translate([r_inner + mount_thickness + TOL, 0, 0])
+    dovetail(6+TOL, 3+TOL, 2.5+TOL, thickness+TOL);
 }
 }
 
-for (i_r=[12:1:16])
+for (i_r=[8:0.5:10])
 {
-    translate([0, 40*(i_r-12), 0]) ring_assembly(i_r);
+    translate([0, 50*(i_r-8), 0]) ring_assembly(i_r);
 }
 
 //ring_assembly();
